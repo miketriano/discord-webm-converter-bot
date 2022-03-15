@@ -5,7 +5,7 @@ import urllib.request
 import uuid
 import validators
 
-ffmpeg_command = 'ffmpeg -i {} {}'
+ffmpeg_command = 'ffmpeg -i {} -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" {}'
 client = discord.Client()
 api_key = os.environ.get('DISCORD_WEBM_BOT_KEY', sys.argv[1])
 
